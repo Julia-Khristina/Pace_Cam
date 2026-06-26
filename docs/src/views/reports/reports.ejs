@@ -398,7 +398,7 @@
       var datasets = (data.datasets || []).map(function(ds, i) {
         var color = teamColors[i % teamColors.length];
         return {
-          label: ds.team_name,
+          label: ds.team_name || 'Equipe #' + (i + 1),
           data: ds.data,
           borderColor: color,
           backgroundColor: color + '22',
