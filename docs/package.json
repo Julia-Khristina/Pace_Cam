@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc && copyfiles -u 1 src/views/*/ dist/views",
+    "build": "tsc && copyfiles -u 2 \"src/views/**/*.ejs\" dist/views",
     "start": "node dist/server.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
