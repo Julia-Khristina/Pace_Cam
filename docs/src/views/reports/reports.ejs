@@ -393,14 +393,15 @@
       var canvas = document.getElementById('kmChart');
       if (!canvas || !data) return;
 
-      var colors = ['#ff1e3c', '#ffd700', '#00e5ff', '#7c4dff'];
+      var teamColors = ['#ff1e3c', '#0055ff'];
       var labels = data.labels || [];
       var datasets = (data.datasets || []).map(function(ds, i) {
+        var color = teamColors[i % teamColors.length];
         return {
           label: ds.team_name,
           data: ds.data,
-          borderColor: colors[i % colors.length],
-          backgroundColor: colors[i % colors.length] + '22',
+          borderColor: color,
+          backgroundColor: color + '22',
           borderWidth: 2,
           pointRadius: 3,
           pointHoverRadius: 5,
